@@ -17,7 +17,7 @@ For example:
 It will clone your local Raspberry Pi system and files to target disk `/dev/sdb`. 
 
 ## Details & Explanations
-If you want to know more details and explanations, please read this blog: 
+If you want to know more details and explanations, please read my blog: 
 - English version: [How to clone system to smaller disk/SD card on Raspberry Pi - ZhongUncle‘s  blog](https://zhonguncle.github.io/blogs/60276f40ad2e87f4620c0126ce780fb7.html)
 - 中文版: [如何克隆树莓派系统到较小的硬盘/SD卡上（如何分区、设置修复引导） - ZhongUncle CSDN](https://blog.csdn.net/qq_33919450/article/details/136404094) 
 
