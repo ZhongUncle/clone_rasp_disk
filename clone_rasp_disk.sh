@@ -1,7 +1,14 @@
 #!/bin/bash
 # clone Raspberry Pi system to target disk
 
-target=$1
+targetPath=$1
+
+if [[ $targetPath=="/dev/mmcblk0" ]]; then
+    target="/dev/mmcblk0p"
+else
+    target=$targetPath
+fi
+
 
 if [ $target ]; then
     sudo parted $target --script 'mklabel msdos mkpart primary fat32 4194.5kB 541MB mkpart primary ext4 541MB 100% print quit'
@@ -25,5 +32,5 @@ if [ $target ]; then
     sudo sed -i -e "s/root=PARTUUID=........-02/root=PARTUUID=$uuid2/g" /mnt/rootfs/boot/cmdline.txt
     sudo sed -i -e "s/root=PARTUUID=........-02/root=PARTUUID=$uuid2/g" /mnt/rootfs/boot/firmware/cmdline.txt
 else
-    echo "Please add target device name of disk, like /dev/sdb."
+    echo "Please add target device name of disk, like /dev/sdb, /dev/mmcblk0."
 fi
