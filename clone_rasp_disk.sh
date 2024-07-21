@@ -11,7 +11,7 @@ if [ $target ]; then
 
     sudo mkdir /mnt/rootfs
     sudo mount $target"2" /mnt/rootfs/
-    sudo rsync -axHAWXS --numeric-ids --info=progress2 --exclude={"/mnt/","/boot/firmware/"} /* /mnt/rootfs
+    sudo rsync -axHAWXS --numeric-ids --info=progress2 --exclude={"/mnt/","/boot/firmware/","/dev","/media","/proc","/sys","/lost+found","/run","/tmp"} /* /mnt/rootfs
 
     sudo mkdir /mnt/rootfs/mnt /mnt/rootfs/boot/firmware
     sudo mount $target"1" /mnt/rootfs/boot/firmware/
